@@ -77,7 +77,7 @@
                 <div x-data="{ redirectTo: '{{ route('contacts.show', $contact->id) }}' }" x-on:click="window.location.href = redirectTo" class="flex flex-row items-center mx-auto md:mx-0 min-w-[18rem] lg:min-w-[20rem]  gap-3 shadow-sm  shadow-slate-500 cursor-pointer p-3 rounded-md hover:bg-slate-100 hover:text-blue-800 hover:font-bold">
                     <div>
                         @if($contact->profile_photo_path == null)
-                        <img class="w-12 h-12 rounded-full object-cover" src="{{asset('storage/contacts/photos/default.png')}}" alt="profile_pic">
+                        <img class="w-12 h-12 rounded-full object-cover" src="{{asset('default.png')}}" alt="profile_pic">
                         @else
                         <img class="w-12 h-12 rounded-full object-cover" src="{{asset($contact->profile_photo_path)}}" alt="profile_pic">
                         @endif

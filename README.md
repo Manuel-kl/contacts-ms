@@ -56,6 +56,12 @@ Run database seeder (To seed contacts categories):
 php artisan db:seed
 ```
 
+Create symbolic link for storage
+
+```sh
+php artisan storage:link
+```
+
 Run the development server:
 
 ```sh

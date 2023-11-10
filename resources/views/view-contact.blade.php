@@ -9,11 +9,9 @@
             <div class=" mx-auto  ">
                 <div class="flex justify-center items-center ">
                     @if($contact->profile_photo_path == null)
-                    <img class="w-12 h-12 rounded-full object-cover"
-                        src="{{asset('storage/contacts/photos/default.png')}}" alt="profile_pic">
+                    <img class="w-12 h-12 rounded-full object-cover" src="{{asset('default.png'otos)}}" alt="profile_pic">
                     @else
-                    <img class="w-20 h-20 rounded-full object-cover" src="{{asset($contact->profile_photo_path)}}"
-                        alt="profile_pic">
+                    <img class="w-20 h-20 rounded-full object-cover" src="{{asset($contact->profile_photo_path)}}" alt="profile_pic">
                     @endif
                 </div>
                 <div class="flex flex-col items-center justify-center pb-5">
@@ -33,8 +31,7 @@
             </div>
             <div x-data="{ showModal: false }" class="flex flex-row justify-center items-center  gap-7">
                 <div>
-                    <button x-show="!showModal" @click="showModal = true"
-                        class="px-5 py-2 w-24 bg-red-500 text-white rounded-md hover:bg-red-900">
+                    <button x-show="!showModal" @click="showModal = true" class="px-5 py-2 w-24 bg-red-500 text-white rounded-md hover:bg-red-900">
                         Delete
                     </button>
                     <div x-show="showModal" x-cloak class="gap-7 flex flex-row">
@@ -45,8 +42,7 @@
                                 Confirm Delete
                             </button>
                         </form>
-                        <button @click="showModal = false"
-                            class="px-5 py-2  bg-gray-300 text-white rounded-md hover:bg-gray-400">
+                        <button @click="showModal = false" class="px-5 py-2  bg-gray-300 text-white rounded-md hover:bg-gray-400">
                             Cancel
                         </button>
                     </div>
@@ -54,8 +50,7 @@
 
                 <div x-show="!showModal">
                     <a href="{{route('contacts.edit', $contact->id)}}">
-                        <button
-                            class="px-5 py-2 w-24 bg-green-500 text-white rounded-md hover:bg-green-900">Edit</button>
+                        <button class="px-5 py-2 w-24 bg-green-500 text-white rounded-md hover:bg-green-900">Edit</button>
 
                     </a>
                 </div>
@@ -64,8 +59,8 @@
     </div>
 
     <style>
-    [x-cloak] {
-        display: none;
-    }
+        [x-cloak] {
+            display: none;
+        }
     </style>
 </x-app-layout>

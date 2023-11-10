@@ -26,8 +26,8 @@
                     <div @click="showModal =true" class="flex flex-row items-center gap-3">
                         <div>
                             @if($contact->profile_photo_path == null)
-                            <img class="w-12 h-12 rounded-full object-cover"
-                                src="{{asset('storage/contacts/photos/default.png')}}" alt="profile_pic">
+                            <img class="w-12 h-12 rounded-full object-cover" src="{{asset('default.png')}}"
+                                alt="profile_pic">
                             @else
                             <img class="w-12 h-12 rounded-full object-cover"
                                 src="{{asset($contact->profile_photo_path)}}" alt="profile_pic">
