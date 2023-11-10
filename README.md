@@ -31,6 +31,13 @@ Setup configuration:
 cp .env.example .env
 ```
 
+Open the `.env` file and setup your database username and password
+
+```
+DB_USERNAME=your_database_username
+DB_PASSWORD=your_database_password
+```
+
 Generate application key:
 
 ```sh
