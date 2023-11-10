@@ -3,7 +3,7 @@
 Clone the repo locally:
 
 ```sh
-git clone https://github.com/Manuel-kl/contacts-ms
+git clone https://github.com/Manuel-kl/contacts-ms.git
 cd contacts-ms
 ```
 
