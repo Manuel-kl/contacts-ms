@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\Contacts\ContactsController;
+use App\Http\Controllers\Contacts\DeletedContactsController;
+use App\Http\Controllers\Contacts\FilterContactsController;
+use App\Http\Controllers\Contacts\SearchContactsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,8 +34,10 @@ Route::middleware('auth')->group(function () {
     // contacts
     Route::get('/dashboard', [ContactsController::class, 'index'])->name('dashboard');
     Route::resource('contacts', ContactsController::class);
-    Route::get('/filter-contacts/{tag_id}', [ContactsController::class, 'filterContacts']);
-    Route::get('/deleted-contacts', [ContactsController::class, 'deletedContacts'])->name('contacts.trash');
+    Route::get('/filter-contacts/{tag_id}', [FilterContactsController::class, 'filterContacts']);
+    Route::get('/deleted-contacts', [DeletedContactsController::class, 'deletedContacts'])->name('contacts.trash');
+    Route::post('/restore/{contact}', [DeletedContactsController::class, 'restoreContact'])->name('contacts.restore');
+    Route::post('/search', [SearchContactsController::class, 'search'])->name('contacts.search');
 });
 
 require __DIR__ . '/auth.php';
